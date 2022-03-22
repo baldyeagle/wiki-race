@@ -1,0 +1,1 @@
+export { WikipediaModal } from './WikipediaModal';
