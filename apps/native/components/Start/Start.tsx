@@ -126,7 +126,6 @@ export const Start = () => {
                     setShowWebview={setShowWebview}
                     currentPage={currentPage}
                     navigatePage={navigatePage}
-                    randomEnd={randomEnd}
                     isComplete={isComplete}
                     showEndDetails={showMoreEndAlert}
                 />
