@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Center, Divider, Heading, Icon, Text, View } from 'native-base';
+import { Center, Divider, Heading, Icon, Skeleton, Text, View } from 'native-base';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import axios from 'axios';
 import { Alert, Image, StyleSheet } from 'react-native';
@@ -93,11 +93,17 @@ export const Start = () => {
             <View style={{ flex: 4, alignContent: 'flex-start', justifyContent: 'flex-start', marginVertical: 4 }}>
                 <Heading style={{ textAlign: 'center' }} fontSize="md">{order.toUpperCase()}</Heading>
                 <View style={{ flex: 1, flexDirection: 'row', alignContent: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
-                    <Text style={{ textAlign: 'center' }} mx={2} fontSize="md">{page?.title}</Text>
-                    <HelpIcon onPress={openPageDetails} />
+                    {page?.title ? (
+                        <>
+                            <Text style={{ textAlign: 'center' }} mx={2} fontSize="md">{page?.title}</Text>
+                            <HelpIcon onPress={openPageDetails} />
+                        </>
+                    ) : (
+                        <Skeleton.Text lines={1} px={12} />
+                    )}
                 </View>
                 <View style={styles.imageContainer}>
-                    {page?.thumbnail &&
+                    {page?.thumbnail ? (
                         <Image
                             style={{
                                 width: page?.thumbnail.width,
@@ -107,9 +113,12 @@ export const Start = () => {
                             }}
                             source={{ uri: page?.thumbnail.source }}
                         />
+                    ) : (
+                        <Skeleton.Text />
+                    )
                     }
                 </View>
-            </View>
+            </View >
         )
     };
 
