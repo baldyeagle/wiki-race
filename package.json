@@ -21,6 +21,7 @@
     "node": ">=14.0.0"
   },
   "resolutions": {
+    "ansi-regex": "^5.0.1",
     "browserslist": "^4.16.5",
     "colors": "1.4.0",
     "expo-yarn-workspaces": "~1.7.0",
