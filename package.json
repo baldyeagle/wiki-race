@@ -1,25 +1,36 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "name": "ten-cookie-cutter",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
-  },
-  "dependencies": {
-    "expo": "~41.0.1",
-    "expo-status-bar": "~1.0.4",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
-    "react-native-web": "~0.13.12"
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@types/react": "~16.9.35",
-    "@types/react-native": "~0.63.2",
-    "typescript": "~4.0.0"
+    "prettier": "^2.5.1",
+    "turbo": "latest"
   },
-  "private": true
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "resolutions": {
+    "browserslist": "^4.16.5",
+    "colors": "1.4.0",
+    "expo-yarn-workspaces": "~1.7.0",
+    "glob-parent": "^5.1.2",
+    "immer": "^9.0.6",
+    "nanoid": "^3.1.31",
+    "node-fetch": "^2.6.1",
+    "nth-check": "^2.0.1",
+    "postcss": "^8.2.13",
+    "resolve": "1.20.0"
+  },
+  "packageManager": "yarn@1.22.17"
 }
